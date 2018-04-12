@@ -1,12 +1,18 @@
-import { ADD_REMINDER, DELETE_REMINDER, CLEAR_REMINDERS } from '../constants';
 import axios from 'axios';
 import { FETCH_USER } from './types';
+import { ADD_REMINDER, DELETE_REMINDER, CLEAR_REMINDERS } from '../constants';
+
 
 export const fetchUser = () => {
     return function(dispatch) {
         axios
             .get('/api/current_user')
-            .then(res => dispatch({ type: FETCH_USER, payload: res }));
+            .then(res => {
+                dispatch({ type: FETCH_USER, payload: res });
+                console.log('====================================');
+                console.log(res);
+                console.log('====================================');
+            });
     };
 };
 

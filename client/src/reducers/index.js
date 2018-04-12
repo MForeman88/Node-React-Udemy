@@ -1,5 +1,11 @@
 import { ADD_REMINDER, DELETE_REMINDER, CLEAR_REMINDERS } from './../constants';
 import { bake_cookie, read_cookie } from 'sfcookies';
+import { combineReducers } from 'redux';
+import authReducer from './authReducer';
+
+combineReducers({
+    auth: authReducer
+});
 
 const reminder = (action) => {
     let { text, dueDate } = action;
