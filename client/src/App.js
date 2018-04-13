@@ -9,7 +9,6 @@ const Reminder = () => <h2>Reminders</h2>;
 
 class App extends Component {
     componentDidMount() {
-        console.log('hello');
         this.props.fetchUser();
     }
     render() {
@@ -25,7 +24,7 @@ class App extends Component {
             </div>
         );
     }
-};
+}
 
 
 export default connect(null, actions)(App);
